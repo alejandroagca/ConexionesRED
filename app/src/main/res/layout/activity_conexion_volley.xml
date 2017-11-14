@@ -1,9 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.myapplication.ConexionVolleyActivity">
+    android:orientation="vertical"
+    tools:context="com.example.myapplication.ConexionVolley">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/txvIntroducir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Introduzca una URL" />
+
+    <EditText
+        android:id="@+id/edtURL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="http://192.168.3.57/acceso/prueba.txt" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnConectar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CONECTAR" />
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/wbvMostrar"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+    </WebView>
+
+    <TextView
+        android:id="@+id/txvTiempo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+</LinearLayout>
