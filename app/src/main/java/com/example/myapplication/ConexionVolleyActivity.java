@@ -10,8 +10,6 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NetworkResponse;
 import com.android.volley.NoConnectionError;
@@ -21,7 +19,6 @@ import com.android.volley.Response;
 import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 
 import java.io.UnsupportedEncodingException;
 
@@ -43,7 +40,8 @@ public class ConexionVolleyActivity extends AppCompatActivity implements View.On
         mButton.setOnClickListener(this);
         mWebView = (WebView) findViewById(R.id.wbvMostrar);
         tiempo = (TextView) findViewById(R.id.txvTiempo);
-         progreso = new ProgressDialog(ConexionVolleyActivity.this);
+        progreso = new ProgressDialog(ConexionVolleyActivity.this);
+        mRequestQueue = MySingleton.getInstance(this.getApplicationContext()).getRequestQueue();
     }
     @Override
     public void onClick(View view) {
@@ -58,7 +56,7 @@ public class ConexionVolleyActivity extends AppCompatActivity implements View.On
     public void makeRequest(String url) {
         final String enlace = url;
         // Instantiate the RequestQueue.
-        mRequestQueue = Volley.newRequestQueue(this);
+        //mRequestQueue = Volley.newRequestQueue(this);
         progreso.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progreso.setMessage("Conectando...");
         progreso.setCancelable(true);
